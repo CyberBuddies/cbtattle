@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+$:.unshift File.expand_path("../lib",File.dirname(__FILE__))
+
+require "pathname"
+require "yaml"
+require "fileutils"
+
+
+exec 'bundle exec rake db:migrate && bundle exec rake db:seed'

@@ -1,0 +1,21 @@
+{
+  "name": "BeaconCtrl",
+  "description": "Setup and manage even large beacon deployments with BeaconControl - our open source platform",
+  "repository": "https://github.com/upnext/BeaconControl",
+  "website": "https://beaconcontrol.io/",
+  "logo": "https://admin.beaconcontrol.io/logo.svg",
+  "env": {
+    "RAILS_ENV": "production",
+    "RACK_ENV": "production",
+    "RAILS_SERVE_STATIC_FILES": "true",
+    "MAILER_SENDER": "no-reply@beaconctrl.com",
+    "REGISTRATION_MAILER_SENDER": "no-reply@beaconctrl.com",
+    "SYSTEM_MAILER_RECEIVER": "no-reply@beaconctrl.com",
+    "COUPON_URL": "",
+    "MAILER_HOST": ""
+  },
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate && bundle exec rake db:seed"
+  },
+  "addons": ["redistogo:nano", "sendgrid:starter"]
+}

@@ -1,0 +1,226 @@
+/**
+ * Copyright (c) 2015, Upnext Technologies Sp. z o.o.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD 3-Clause License found in the
+ * LICENSE.txt file in the root directory of this source tree. 
+ */
+
+#beacon-map {
+  width: 100%;
+  height: 450px;
+  border: 1px solid #ccc;
+
+  margin-bottom: 25px;
+}
+
+.beacons-navbar {
+  margin: 10px;
+
+  ul {
+    list-style-type: none;
+    display: inline-block;
+    word-spacing: -4px;
+    padding: 0px;
+
+    li {
+      display: inline-block;
+      width: 34px;
+      height: 34px;
+      border: 1px solid #d3d3d3;
+      border-right: 0px;
+      background-color: #fff;
+
+      &:last-child {
+        border-right: 1px solid #d3d3d3;
+      }
+    }
+  }
+}
+select#beacon_zone_id {
+  option:first-child {
+    background-color: #494846;
+  }
+}
+
+div.beacons-table {
+  border: 1px solid @border-color;
+  margin: 20px 0;
+
+  .table-header {
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid @table-border-color;
+    border-bottom-width: 0;
+
+    a {
+      margin-left: 15px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    input[type=submit]:first-child {
+      margin-left: 0;
+    }
+
+    .has-feedback {
+      .form-control {
+        padding-right: 45px;
+      }
+
+      .search_table_beacon_name {
+        width: 100%;
+      }
+
+      i {
+        top: 2px !important;
+      }
+    }
+
+    .row {
+      a, .btn-group, input { width: 100%; }
+    }
+  }
+
+  table {
+    margin-bottom: 0;
+  }
+
+  td:not(.zone-mark):first-child,
+  th:not(.select-all-checkbox):first-child {
+    padding-left: 20px;
+  }
+
+  thead {
+    th {
+      background-color: @gray-lighter;
+    }
+  }
+
+  tbody {
+
+    td.disable-select {
+      cursor: initial;
+    }
+  }
+
+  &.linked-rows,
+  &.selectable-rows {
+    tr {
+      cursor: pointer;
+    }
+  }
+
+  .zone-mark {
+    padding-left:  2px;
+    padding-right: 2px;
+    width: 1px;
+  }
+
+  .select-all-checkbox {
+    .custom-checkbox {
+      margin-left: 4px;
+    }
+  }
+
+  .with-checkbox .custom-checkbox label:before {
+    top: 13px;
+  }
+
+  td > .btn {
+    color: black;
+  }
+
+  .table-footer {
+    background: #fff;
+    padding: 15px;
+  }
+}
+
+.control-group {
+  &.beacon-state {
+    background: transparent;
+    height: auto !important;
+
+    > .row {
+      margin-bottom: 10px;
+      margin-top: 10px;
+
+      &:first-of-type {
+        margin-top: 3px;
+      }
+
+      &:last-of-type {
+        margin-bottom: 3px;
+      }
+    }
+  }
+}
+
+#beacon-applications {
+  a {
+    display: block;
+    margin-top: -1px;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .form-control {
+    height: 50px;
+    padding-top: 14px;
+  }
+
+  .small-app-icon {
+    background: transparent image-url('icons/app@2x.png') no-repeat center;
+    background-size: 16px 16px;
+    float: left;
+    height: 18px;
+    margin: 1px 12px 0 -15px;
+    width: 18px;
+  }
+
+  .actions {
+    color: #a3a3a3;
+    font-size: 12px;
+    padding-top: 2px;
+  }
+}
+
+.beacon_config_transmission_power {
+  input, div.slider {
+    display: block;
+    width: 100%;
+  }
+}
+
+.transmission-power-value {
+  color: #929292;
+  font-size: 12px;
+  position: absolute;
+  right: 2px;
+}
+
+.with-huge-space {
+  margin-top: 25px;
+}
+
+.test-notification-group {
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+.test-notification-group .beacon_activity_trigger_event_type {
+  margin-bottom: 6px;
+}
+
+.validation-extension .form-group input + span.help-inline {
+  display: none !important;
+}

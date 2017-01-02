@@ -1,0 +1,58 @@
+<%###
+# Copyright (c) 2015, Upnext Technologies Sp. z o.o.
+# All rights reserved.
+#
+# This source code is licensed under the BSD 3-Clause License found in the
+# LICENSE.txt file in the root directory of this source tree. 
+###%>
+<div class="modal walkthrough-modal" id="walkthrough-modal-first" tabindex="-1" role="dialog" aria-hidden="true" data-walkthrough-index="0" data-walkthrough-title="<%=t('walkthrough.welcome.title')%>" data-walkthrough-body="<%= raw t('walkthrough.welcome.body', github_url: '<a href=https://github.com/upnext/BeaconCtrl> https://github.com/upnext/BeaconCtrl </a>') %>">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-header-content">
+          <h4 class="modal-title"><%= t('walkthrough.welcome.title') %></h4>
+          <p>
+            <%= raw t('walkthrough.welcome.body') %>
+          </p>
+        </div>
+      </div>
+      <div class="modal-body">
+        <a href="https://itunes.apple.com/pl/app/beaconctrl/id1020666394?mt=8" target="_blank" >
+          <%= image_tag('icon-appstore.svg', class: "content-button") %>
+        </a>
+
+        <p>
+          <a href="#">
+            I already have an app
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal walkthrough-modal" id="walkthrough-modal-second" tabindex="-1" role="dialog" aria-hidden="true" data-walkthrough-index="0" data-walkthrough-title="<%=t('walkthrough.welcome.title')%>" data-walkthrough-body="<%= raw t('walkthrough.welcome.body', github_url: '<a href=https://github.com/upnext/BeaconCtrl> https://github.com/upnext/BeaconCtrl </a>') %>">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header gray-light">
+        <div class="modal-header-content">
+          <h4 class="modal-title"><%= raw t('walkthrough.guide.title') %></h4>
+          <p>
+            <%= raw t('walkthrough.guide.body') %>
+          </p>
+        </div>
+      </div>
+      <div class="modal-body">
+        <a href="<%= '/walkthrough/intro' %>" class="btn btn-success content-button" target="_blank">
+          SEE IT NOW
+        </a>
+
+        <p>
+          <a href="#">
+            Maybe later
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

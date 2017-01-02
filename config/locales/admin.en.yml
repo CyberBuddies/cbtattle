@@ -1,0 +1,419 @@
+###
+# Copyright (c) 2015, Upnext Technologies Sp. z o.o.
+# All rights reserved.
+#
+# This source code is licensed under the BSD 3-Clause License found in the
+# LICENSE.txt file in the root directory of this source tree. 
+###
+#
+en:
+  activities:
+    scheme:
+      coupon:
+        button_background_color: 'Button background'
+        button_font_color: 'Button text'
+      custom:
+        attributes: 'Attributes'
+
+    action:
+      scheme:
+        header:
+          url: 'URL actions'
+          coupon: 'Coupons'
+          custom: 'Custom actions'
+          default: "%{scheme} actions"
+
+    edit:
+      title: "Applications"
+      action: "Edit %{scheme} action"
+
+    form:
+      add: "Add"
+      essentials: "Essentials"
+      action: "action"
+      remove: "Remove"
+      search_beacon: "Search for a beacon"
+      search_zone: "Search for a zone"
+      submit:
+        edit: 'Save action'
+        new: 'Add action'
+      scheme:
+        url: 'URL'
+        coupon: 'Coupon'
+        custom: 'Custom'
+
+    modal:
+      title: 'Warning!'
+      body: 'Are you sure you want to delete action?'
+
+    new:
+      title: "Applications"
+      action: "Add new %{scheme} action"
+
+    index:
+      title: 'Applications'
+      delete_actions: 'Delete Actions'
+
+  analytics:
+    show:
+      dwell_time_title: 'Dwell time'
+      actions_title: 'Actions'
+      active_users_title: 'Active users'
+
+  applications:
+    application:
+      created_at: 'Created at: %{date}'
+
+    form:
+      save: 'Save'
+      update: 'Update'
+      cancel: 'Cancel'
+
+    apns_cert_form:
+      save: 'Save'
+      update: 'Update'
+      cancel: 'Cancel'
+
+    index:
+      title: 'Applications'
+
+    modal:
+      title: 'Warning!'
+      body: 'Are you sure you want to delete application?'
+
+    new:
+      form_placeholder: 'Application name'
+      add_new: 'Add new'
+
+    edit:
+      title: 'Applications'
+
+  zones:
+    edit:
+      title: 'Zones'
+      action: 'Edit Zone'
+
+    form:
+      save: 'Save Zone'
+      cancel: 'Cancel'
+      add: 'Add'
+      search_beacon: "Search for a beacon"
+
+      modal:
+        title: 'Beacons mismatch'
+        body: 'Some of selected Beacons belongs to different manager. Update their manager?'
+
+    index:
+      title:    'Zones'
+      add_new:  'Add New Zone'
+      options:  'Options'
+
+    new:
+      title: 'Zones'
+      action: 'Add Zone'
+
+    modal:
+      title: 'Warning!'
+      body: 'Are you sure you want to delete zone?'
+
+  beacons:
+    edit:
+      title:  'Beacons'
+      action: 'Edit Beacon'
+
+    form:
+      unassigned: 'Unassigned'
+      save: 'Save Beacon'
+      cancel: 'Cancel'
+      test_notification: '(will be displayed for the ContextOS App users)'
+      uuid: 'UUID'
+      proximity: 'UUID'
+      major: Major
+      minor: Minor
+      namespace: Namespace
+      instance: Instance ID
+      url: URL
+      proximity_tooltip: UUID
+
+    index:
+      title:   'Beacons'
+      add_new: 'Add Beacon'
+      options: 'Options'
+      details: 'Details'
+      batch_delete: 'Delete Beacons'
+
+      unassigned_zone: 'Unassigned'
+      unassigned_floor: 'N/A'
+      select_zone_prompt: 'Set zone'
+      select_floor_prompt: 'Set floor'
+      search: 'Search...'
+
+    modal:
+      title: 'Warning!'
+      body: 'Are you sure you want to delete beacon?'
+
+    new:
+      title: 'Beacons'
+      action: 'Add Beacon'
+
+  maps:
+    show:
+      title: 'Map'
+      select_floor: 'Select floor'
+      filter_zone: 'Filter zone'
+      add_beacon: 'Add Beacon'
+      search: 'Search...'
+
+    modal:
+      title: 'Warning!'
+      body: 'Are you sure you want to delete this Beacon?'
+
+  admins:
+    edit:
+      title: 'Users'
+      action: 'Edit User'
+      change: 'Change'
+      update: 'Update'
+
+    form:
+      save: 'Save User'
+      cancel: 'Cancel'
+      select_role: 'Select role'
+
+    index:
+      title: 'Users'
+      new: 'Add New User'
+      add_new: 'Add New User'
+      options: 'Options'
+      batch_delete: 'Delete admins'
+      search: 'Search...'
+      details: 'Details'
+
+    modal:
+      title: 'Warning!'
+      body: 'Are you sure you want to delete user?'
+
+    new:
+      title: 'Users'
+      action: 'Add User'
+
+    registrations:
+      edit:
+        title: 'Profile'
+
+  dashboard:
+    index:
+      title: 'Home'
+      welcome: 'Welcome to BeaconControl!'
+      description: "This is the place where you’ll manage your beacon infrastructure and configure actions triggered in your mobile applications. Why don’t you start by adding some beacons? Then you can create your first application, add actions and start monitoring your beacons’ usage."
+      beacon_title: 'NEW BEACON'
+      beacon_description: "Adding the beacon is fast and easy. Recognize your beacon with UUID, and the major and minor numbers provided by its supplier, and then locate your beacon on the map. Now you're ready to setup actions for it, test it on BeaconControl mobile application and use in further development."
+      zone_title: "NEW ZONE"
+      zone_description: "Link your beacons into zones to create an extended range for your beacon deployment. Extended ranges create an area in which specified zone actions are triggered, improving the efficiency of beacon management and mapping. Use this feature to magnify the effect of single beacons."
+      application_title: "NEW APPLICATION"
+      application_description: "Our iOS test application is a good start but you'll want to connect your own at the end. Use automatically generated keynumbers to match your setup with your mobile applications. You can also embed our opensource SDK for iOS to speed up your project development."
+      add_beacon: "Add Beacon"
+      add_zone: "Add Zone"
+      add_application: "Add Application"
+
+  event_extension_assignments:
+    show:
+      switch_user: 'Switch user'
+
+  extensions:
+    form:
+
+    index:
+      title: 'Applications'
+
+      active: 'Active Add-ons'
+      inactive: 'More Add-ons'
+
+    extension:
+      created_at: 'Created at %{date}'
+
+    inactive_extension:
+      created_at: 'Created at %{date}'
+
+  extensions_marketplace:
+    index:
+      title: 'Add-ons'
+      active: 'Enabled Add-ons'
+      available: 'More Add-ons'
+
+    edit:
+      title: 'Add-ons'
+
+  layouts:
+    application:
+      site_title: 'Beacon Admin'
+
+      menu:
+        dashboard: 'Home'
+        applications: 'Applications'
+        beacons: 'Beacons'
+        zones: 'Zones'
+        map: 'Map'
+        extensions_marketplace: 'Add-ons'
+        users: 'Users'
+        walkthrough: "Beginners' Guide"
+
+      toggle_nav: 'Toggle navigation'
+      profile: 'Profile'
+      logout: 'Logout'
+
+  shared:
+    subheader:
+      actions: 'Actions'
+      analytics: 'Analytics'
+      settings: 'Settings'
+      extensions: 'Add-ons'
+
+    image_input:
+      select: 'Add'
+      change: 'Change'
+      remove: 'Remove'
+
+  templates:
+    template_1: 'Template with logo'
+    template_2: 'Template without logo'
+    template_3: 'Template with logo & barcode'
+    template_4: 'Template without logo & with barcode'
+    template_5: 'Template with button'
+
+  triggers:
+    enter: 'On Hello'
+    enter_description: 'Trigger an action when a user appears in the beacon range.'
+    leave: 'On Exit'
+    leave_description: 'Trigger an action when a user leaves the beacon range.'
+    near: 'Nearby'
+    near_description: 'Trigger an action when a user is in medium-to-close distance from the beacon. (20cm – 5m)'
+    far: 'In Sight'
+    far_description: 'Trigger an action when a user is distant from the beacon. (>5m)'
+    immediate: 'Almost Touching'
+    immediate_description: "Trigger an action when a user's device is in direct proximity of the beacon. (<20cm)"
+    default: 'Not specified'
+    range:
+      BeaconTrigger: 'Beacon'
+      ZoneTrigger: 'Zone'
+
+  walkthrough:
+    previous: "PREVIOUS"
+    next: "NEXT"
+    start: "START"
+    finish: "FINISH"
+    step: "Step"
+    welcome:
+      title: "Hello there!"
+      body: "BeaconControl works the best if paired with a mobile app.</br>
+        And now is the perfect moment to download it."
+      intro: "Welcome to BeaconControl, your free entry to the beacon world. Here, you’ll prepare your beacons deployment, manage your beacons on the map, and customize your implementation by developing add ons. Please use our short walkthrough first, and then you’ll be free to depart on your own journey with BeaconControl. You’re also invited to github: %{github_url}"
+    guide:
+      title: "Do you want to see <br/> the Beginners' Guide?"
+      body: "You can do it now, or anytime<br/>
+        It's at the bottom left on your Admin Panel"
+    beacons:
+      title: "ADD BEACON"
+      body: "This functionality enables you to add beacons and assign notifications that your beacons will send out. Add Beacon will also allow you to position your beacons on the map."
+    zones:
+      title: "ZONES"
+      body: "Zones functionality enables you to group your beacons into zones according to your criteria. Here, you'll easily manage the deployment of your beacons: for example, your zones can correspond to different floors of a multi-storey building."
+    map:
+      title: "MAP"
+      body: "This functionality gives you a visualisation of all your beacons on the map, with no need to refer to a list."
+    applications:
+      title: "APPLICATIONS"
+      body: "This functionality will enable you to develop apps for your clients.  For your convenience we've provided you with a test app that will let you test your beacons. Applications will also let you store and manage the apps that work with your beacons."
+    addons:
+      title: "ADD-ONS"
+      body: "Here you can create your own add-ons. We've provided you with a starter set of ready-to-go add-ons to build on."
+
+    sidebar:
+      intro: "<b>1.</b> Introduction"
+      add_beacon: "<b>2.</b> How to setup your first beacon and test it"
+      link_beacon: "<b>3.</b> How to link your beacons into the zone"
+      create_action: "<b>4.</b> How to create an action for your beacon"
+      customize_features: "<b>5.</b> How to customize BeaconControl features"
+      glossary: "<b>6.</b> Glossary"
+    introduction:
+      title: "Introduction"
+      add_beacon: "Add beacon"
+      map: "Map"
+      zones: "Zones"
+      applications: "Applications"
+      add_ons: "Add-ons"
+    add_beacon:
+      title: "Add Beacon & Test it"
+      description: "There are two ways to setup and test new beacon. <br/>
+        Using Admin Panel and mobile phone - or only mobile phone. Remember to setup your BeaconControl account or both, to conviniently test deployments."
+      admin_panel: "Using Admin Panel"
+      mobile_app: "Using a mobile phone only"
+      add_beacon: "Choose \"Add Beacon\" from Admin Panel home view"
+      fill_in_beacon_data: "Name your beacon and fill it's identification data - UUID, major, and minor.
+        Placing the beacon on the map is optional.<br/>
+        To verify beacon setup right away - mark the test notification and make sure the trigger is setup for \"almoust touching\", so you have full control on your test.<br/>
+        Click save."
+      bring_phone: "Bring together the proper beacon and a phone. The notification should come right away."
+      add_beacon_mobile: "Touch the plus and an arrow right to add a new beacon. Name your beacon and fill it's identification data - 
+        UUID, major and minor. Placing the beacon on the map is optional. To verify beacon setup right away, click \"test notification\"."
+      setup_trigger: "Make sure he trigger is setup for \"almoust touching\", so you have full control on your test. Click save."
+      sth_wrong: "It's not working. What could have go wrong?"
+      no_mobile_app: "You don't have BeaconControl test application on your mobile. Download it <a href=%{mobile_app_url} target='_blank'>here</a>."
+      not_same_account: "Your Admin Panel and BeaconControl mobile Application is not connected to the same account. Remember to use the same e-mail and password on both."
+      wrong_mobile_settings: "Your mobile settings are blocking the action. Open an app and see if there is any information about it. If anything is wrong the application will display it."
+      uuid_mistake: "You've made a mistake in UUID, major and minor numbers, and the system does not recognize your beacon. Double-check it to be sure."
+      battery_dead: "Your beacon's battery is dead."
+      broken_beacon: "Your beacon is broken. We recommend using high-quality beacon hardware, like the ones made by our partner – kontakt.io"
+      no_idea_what_wrong: "We can't think of any other reasons. If you came across a different problem and fixed it let us know, so we can list it here and help other users."
+    link_beacon:
+      title: "How to link your beacons into the zone"
+      description: "After you've set up many beacons you might want to manage them mutually, expanding the reach of your deployment. This is where zones become very useful. Simply go to the zones tab and create a new one. Name it and add the beacons you want to manage together.<br/>
+        When it's done, you're ready to <a href=%{setup_action_url}>setup an action</a> for it."
+    create_action:
+      title: "How to create an action for your beacon or zone"
+      choose_app: "Once you've added the beacon, go to the application tab and choose the app you want to work with. To start, it can be BeaconControl test app where all your beacons are connected by default."
+      see_actions: "After entering the application you'll see accessible actions right away so you can choose <a href=%{type_of_action_url}>the type of action</a>."
+      configure_action: "First, decide if you want to configure an action for a single beacon or <a href=%{zone_url}>a zone</a> and choose a <a href=%{trigger_url}>trigger</a>. Then name the action and add the beacon (or a zone). Now you can customize the action for your needs."
+    customize_features:
+      title: "How to customize your BeaconControl features"
+      description: "Go to the Add-ons tab to see available extensions for your BeaconControl. Simply click on the add-ons you want to enable in your system. Enabled add-ons will be shown at the top, and all the others below."
+    glossary:
+      title: "Glossary"
+      beacon_description: "<b>Beacon</b> is a BLE transmitter that broadcasts to nearby portable electronic devices. It enables smartphones, tablets and other devices to perform actions."
+      beacon_vendors: "Beacons are provided by a variety of vendors, like <a href='http://kontakt.io' target='_blank'>kontakt.io</a>, estimote and such. You need at least one beacon device to use BeaconControl properly."
+      how_to_setup_beacons: "<a href=%{setup_beacon_url}>See how to setup the beacon</a>"
+      beacon_range: "<b>Beacon Range</b> is a space in which the user device can be reached by a beacon signal. The signal strength depends on the hardware capabilities, (standard beacons have an approximate range of 70 meters) and can be diffracted by obstructions in the environment (including a human body)."
+      beacon_distance: "The distance (between a transmitting iBeacon and receiving device) fits three triggers in BeaconControl"
+      almost_touching: "Trigger Almost touching – within a few centimeters"
+      nearby: "Trigger Near By – less than 5 meters"
+      in_sight: "Trigger In Sight – greater than 5 meters away"
+      zones: "<b>Zones</b> are the groups of beacons to which you can assign actions just as you would do with each of the beacons separately. It will speed up your work and expand the reach of your deployment.<br/>
+        One beacon can be part of only one zone, but you can still assign an action to a singular beacon, even if it’s linked in a zone."
+      create_zone: "<a href=%{create_zone_url}>See how to create the zone</a>"
+      action_description: "<b>Action</b> is a request sent to the user phone. Actions can be visible to a user – like push notifications and coupons, or happen at the background – ex. send user identification to the backend."
+      types_of_actions: "BeaconControl provides three types of actions that can be used as they are or can be a part of your own development, so in the end your code is the limit."
+      url_actions: "<b>URL actions</b> to open the web page on a mobile device, or send the request to the backend to execute more complex actions (ex. register the user)"
+      custom_actions: "<b>Custom actions</b> to push the notification to the user phone or enable the developer to create advanced custom actions."
+      coupons_actions: "<b>Coupons</b> to push a coupon to a user device, choose from ready-to-use templates ex. with your logo, a QRcode or a button."
+      trigger: "<b>Trigger</b> is an event which defines when a beacon should proceed with its action."
+      beacon_broadcast: "A beacon broadcast has the ability to approximate when a user has entered, exited, or lingered in a beacon range. Depending on those and the user’s proximity to a beacon, they are able to proceed with different actions."
+      choose_trigger: "You choose the trigger when creating an action for your beacon."
+      how_to_create_action: "<a href=%{create_action_url}>See how to create an action for your beacon.</a>"
+      add_on: "<b>Add-on</b> is an extra element you can enable to customize your Admin Panel features.<br/>
+        See all available add-ons in the Add-ons tab."
+      how_to_enable_add_on: "<a href=%{enable_add_on_url}>See how to enable and use Add-ons.</a>"
+      dwell_time: "<b>DwellTime Add-on</b><br/>
+        An extra <a href=%{trigger_definition_url}>trigger</a>. It causes an action to start when a user lingers within the beacon range for customizable amount of time (between 5 and 60 minutes). Once you’ve activated this add-on you need to add it to your app. Go to applications, choose the app you want to activate it for and click the tab “add-ons” at the top bar. Click on the dwell time add-on in the bottom part."
+      presence_add_on: "<b>Presence Add-on</b><br/>
+        This add-on sends information about the users' presence in the beacon/zone range to the backend. It allows to more advanced functionalities like check-in or personalized communication to be created.<br/>
+        Once you've activated this add-on you need to add it to your app. Go to applications, choose the app you want to activate it for and click the tab \"add-ons\" at the top bar.<br/>
+        *There is no User Interface to observe the users’ presence. For more information you can see the <a href=%{developers_documentation_url} target='_blank'>developers' documentation.</a>"
+      kontakt_io_add_on: "<b>Kontakt.io Add-on</b><br/>
+        This add-on is dedicated to kontakt.io beacon hardware and eases the addition of multiple beacons automatically.<br/>
+        To activate this add-on you'll need API-key from kontakt.io<br/>
+        <a href='https://support.kontakt.io/hc/en-gb/articles/201628731' target='_blank'>https://support.kontakt.io/hc/en-gb/articles/201628731</a>"
+      kontakt_io_beacons: "Once you've activated this add-on the new tab will appear on side menu bar. Just click on it and you’ll see the list of all your kontakt.io beacons ready to import."
+      analytics_add_on: "<b>Analytics Add-on</b><br/>
+        This add-on collects and displays data about how your application is used.<br/>
+        Once you've activated this add-on you need to add it to your app. Go to applications, choose the app you want to activate it for and click the tab \"add-ons\" at the top bar. Click on the Analytics add-on in the bottom part, and then simply click on it."
+

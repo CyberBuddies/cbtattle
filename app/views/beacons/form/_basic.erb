@@ -1,0 +1,125 @@
+<div class="row form-container">
+  <div class="col-md-6 first-column">
+    <div class="control-group">
+      <div class="controls">
+
+        <%= f.input :name,
+                    input_html: {
+                        data: {
+                            required: true
+                        }
+                    }
+        %>
+      </div>
+    </div>
+
+    <div class="control-group" style="<%= 'display:none;' if @beacon.imported? %>">
+      <div class="controls">
+        <%= f.input :vendor,
+                    as: :select,
+                    collection: Beacon::VENDORS,
+                    include_blank: false,
+                    input_html: {
+                        readonly: @beacon.imported?,
+                        class: %W[selectpicker event-publisher],
+                        data: {
+                            live_search: true
+                        }
+                    }
+        %>
+      </div>
+    </div>
+
+    <div class="control-group event-subscriber" data-publisher="#beacon_vendor" data-match="Kontakt" data-action="show">
+      <div class="controls">
+
+        <%= f.input :vendor_uid,
+                    label: render('beacons/form/vendor_uid_tooltip'),
+                    input_html: {
+                        data: {
+                            :'validate-if' => '#beacon_vendor=Kontakt',
+                            pattern: '^[\w\d]{4,5}$',
+                            required: true
+                        },
+                        value: beacon.try(:vendor_uid)
+                    }
+        %>
+      </div>
+    </div>
+
+    <% unless @beacon.imported? %>
+      <div class="control-group event-subscriber with-huge-space" data-publisher="#beacon_vendor" data-match="Kontakt" data-action="show">
+        <div class="controls">
+          <span class="text-muted">
+            <%= t('beacons.form.active_kontakt_io_addon') %>
+            <%= link_to t('beacons.form.kontakt_io_addon'),
+                        activate_extensions_marketplace_path('Kontakt.io'),
+                        method: :put
+            %>
+          </span>
+        </div>
+      </div>
+    <% end %>
+
+    <%= render 'beacons/form/state',
+               f: f,
+               beacon: beacon
+    %>
+
+    <%- if master_beacon(@beacon) %>
+      <div id="beacon-cloud" class="with-huge-space control-group">
+        <div class="controls">
+          <div class="form-group">
+            <label class="control-label">
+              <%= t('beacons.form.synchronized_by') %>
+            </label>
+            <%= link_to edit_beacon_path(master_beacon(@beacon)) do %>
+              <div class="form-control">
+                <%= master_beacon(@beacon).name %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <% if @beacon.persisted? && @beacon.triggers.joins(:application).any? %>
+      <div id="beacon-applications" class="with-huge-space control-group">
+        <div class="controls">
+          <div class="form-group">
+            <label class="control-label">
+              <%= t('beacons.form.connected_applications') %>
+            </label>
+            <%- @beacon.triggers.joins(:application).each do |trigger| %>
+              <% if trigger.application %>
+                <%= link_to application_activities_path(trigger.application) do %>
+                  <div class="form-control">
+                    <div class="col-xs-8">
+                      <span class="small-app-icon"></span>
+                      <%= trigger.application.name %>
+                    </div>
+                    <div class="col-xs-4 text-right actions">
+                      <% if trigger.application.activities.count == 0 %>
+                        <%= t('beacons.form.no_actions') %>
+                      <% else %>
+                        <%= trigger.application.activities.count %>
+                        <%= t('beacons.form.action').downcase.pluralize(trigger.application.activities.count) %>
+                      <% end %>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
+            <%- end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="col-md-6 second-column">
+    <%= render 'beacons/form/map',
+               f: f,
+               zones: zones
+    %>
+  </div>
+</div>

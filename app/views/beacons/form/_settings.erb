@@ -1,0 +1,160 @@
+<div class="row form-container">
+  <div class="col-md-6 first-column">
+
+    <div class="control-group">
+      <div class="controls">
+        <%= f.input :protocol,
+                    collection: Beacon::PROTOCOLS,
+                    as: :select,
+                    disabled: 'Eddystone',
+                    include_blank: false,
+                    input_html: {
+                        class: %W[selectpicker event-publisher],
+                        data: {
+                            live_search: false
+                        }
+                    }
+        %>
+      </div>
+    </div>
+
+    <div class="event-subscriber control-group" data-publisher="#beacon_protocol" data-action="show" data-on="change" data-match="iBeacon">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="controls">
+            <%= f.input :uuid,
+                        as: :old_value_tooltip,
+                        beacon: beacon,
+                        input_html: {
+                            class: %w[uuid-input],
+                            data: {
+                                :'validate-if' => '#beacon_protocol=iBeacon',
+                                required: true,
+                                pattern: Beacon::UuidFormat::REGEX.inspect.gsub(/\//, '')
+                            }
+                        }
+            %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="controls">
+          <div class="col-xs-6">
+            <%= f.input :major,
+                        as: :old_value_tooltip,
+                        input_html: {
+                            data: {
+                                :'validate-if' => '#beacon_protocol=iBeacon',
+                                required: true,
+                                pattern: '\d+'
+                            }
+                        }
+            %>
+          </div>
+          <div class="col-xs-6">
+            <%= f.input :minor,
+                        as: :old_value_tooltip,
+                        input_html: {
+                            data: {
+                                :'validate-if' => '#beacon_protocol=iBeacon',
+                                required: true,
+                                pattern: '\d+'
+                            }
+                        }
+            %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-subscriber control-group" data-publisher="#beacon_protocol" data-action="show" data-on="change" data-match="Eddystone">
+      <div class="row">
+        <div class="controls">
+          <div class="col-xs-6">
+            <%= f.input :namespace,
+                        as: :old_value_tooltip,
+                        id: :namespace,
+                        input_html: {
+                            data: {
+                                :'validate-if' => '#beacon_protocol=Eddystone',
+                                required: true
+                            }
+                        }
+            %>
+          </div>
+          <div class="col-xs-6">
+            <%= f.input :instance,
+                        as: :old_value_tooltip,
+                        id: :instance,
+                        input_html: {
+                            data: {
+                                :'validate-if' => '#beacon_protocol=Eddystone',
+                                required: true
+                            }
+                        }
+            %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="controls">
+            <%= f.input :signal_interval,
+                        as: :old_value_tooltip
+            %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%= render 'beacons/form/test_notification',
+               f: f,
+               beacon: beacon,
+               custom_attributes: beacon.test_activity.custom_attributes
+    %>
+
+  </div>
+  <div class="col-md-6 second-column">
+    <% if @beacon.vendor == 'Kontakt' %>
+      <div class="control-group" style="<%= 'display:none;' if master_beacon?(beacon) %>">
+        <div class="controls" style="color:#d62c1a;margin-bottom:20px;">
+          <%= t('beacons.form.missing_cloud_message') %>
+        </div>
+      </div>
+
+      <%= f.fields_for(:config) do |_| %>
+        <div class="control-group event-subscriber" data-publisher="#beacon_protocol" data-action="show" data-match="iBeacon">
+          <div class="controls">
+            <%= f.input :signal_interval,
+                        as: :old_value_tooltip
+            %>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <div class="controls relative">
+            <div class="transmission-power-value"><span>1</span>/7</div>
+            <%= f.input :transmission_power,
+                        as: :old_value_tooltip,
+                        id: :"transmission_power-slider",
+                        input_html: {
+                            id: :transmission_power,
+                            style: 'display:block;width:100%',
+                            class: %w[slider],
+                            data: {
+                                slider_min:     0,
+                                slider_max:     7,
+                                slider_step:    1,
+                                slider_value:   beacon.transmission_power,
+                                slider_handle:  :square
+                            }
+                        }
+            %>
+          </div>
+        </div>
+      <%- end %>
+    <% end %>
+  </div>
+</div>

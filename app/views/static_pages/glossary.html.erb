@@ -1,0 +1,51 @@
+<div class="walkthrough">
+  <%= render 'sidebar' %>
+
+  <div class='content'>
+    <div>
+      <div class="title"><%= t('walkthrough.glossary.title') %></div>
+      <p><%= raw t('walkthrough.glossary.beacon_description') %></p>
+      <p><%= raw t('walkthrough.glossary.beacon_vendors') %></p>
+      <p><%= raw t('walkthrough.glossary.how_to_setup_beacons', setup_beacon_url: add_beacon_static_pages_path) %></p>
+      <br/>
+      <p><%= raw t('walkthrough.glossary.beacon_range') %></p>
+      <p>
+        <%= raw t('walkthrough.glossary.beacon_distance') %>
+        <ul>
+          <li><%= raw t('walkthrough.glossary.almost_touching') %></li>
+          <li><%= raw t('walkthrough.glossary.nearby') %></li>
+          <li><%= raw t('walkthrough.glossary.in_sight') %></li>
+        </ul>
+      </p>
+      <br/>
+      <p id="zones"><%= raw t('walkthrough.glossary.zones') %></p>
+      <p><%= raw t('walkthrough.glossary.create_zone', create_zone_url: link_beacon_static_pages_path) %></p>
+      <br/>
+      <p><%= raw t('walkthrough.glossary.action_description') %></p>
+      <p id="action_type"><%= raw t('walkthrough.glossary.types_of_actions') %>
+        <ul>
+          <li><%= raw t('walkthrough.glossary.url_actions') %></li>
+          <li><%= raw t('walkthrough.glossary.custom_actions') %></li>
+          <li><%= raw t('walkthrough.glossary.coupons_actions') %></li>
+        </ul>
+      </p>
+      <br/>
+      <p id="trigger"><%= raw t('walkthrough.glossary.trigger') %></p>
+      <p><%= raw t('walkthrough.glossary.beacon_broadcast') %></p>
+      <p><%= raw t('walkthrough.glossary.choose_trigger') %></p>
+      <p><%= raw t('walkthrough.glossary.how_to_create_action', create_action_url: create_action_static_pages_path) %></p>
+      <br/>
+      <p id="add_on"><%= raw t('walkthrough.glossary.add_on') %></p>
+      <p><%= raw t('walkthrough.glossary.how_to_enable_add_on', enable_add_on_url: customize_features_static_pages_path) %></p>
+        <ul>
+          <li><%= raw t('walkthrough.glossary.dwell_time', trigger_definition_url: "#{glossary_static_pages_path}#trigger") %></li>
+          <li><%= raw t('walkthrough.glossary.presence_add_on', developers_documentation_url: "#{AppConfig.landing_page_url}/dev/backend-docs/") %></li>
+          <li>
+            <p><%= raw t('walkthrough.glossary.kontakt_io_add_on') %></p>
+            <p><%= raw t('walkthrough.glossary.kontakt_io_beacons') %></p>
+          </li>
+          <li><%= raw t('walkthrough.glossary.analytics_add_on') %></li>
+        </ul>
+    </div>
+  </div>
+</div>

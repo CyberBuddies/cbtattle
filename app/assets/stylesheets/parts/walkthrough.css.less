@@ -1,0 +1,125 @@
+/**
+ * Copyright (c) 2015, Upnext Technologies Sp. z o.o.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD 3-Clause License found in the
+ * LICENSE.txt file in the root directory of this source tree. 
+ */
+
+.walkthrough-highlight {
+  position: relative;
+  z-index: 1050;
+  border-color: @brand-success !important;
+}
+
+.walkthrough-modal {
+
+  .modal-dialog {
+    position: absolute;
+    top: 50%;
+    width: 420px;
+    left: 50%;
+    margin-top: -150px;
+    margin-left: -85px;
+    text-align: center;
+  }
+
+  .content-button {
+    font-size: 16px;
+    height: 55px;
+    line-height: 34px;
+    margin: 13px 0 15px 0;
+    width: 180px;
+  }
+
+  .modal-content {
+    border: none;
+    .box-shadow(none);
+    width: 420px;
+    height: 300px;
+  }
+
+  .modal-header {
+    background-color: @brand-success;
+    border: none;
+    display: table;
+    height: 150px;
+    padding: 21px 20px 20px;
+    color: #fff;
+    width: 100%;
+
+    &.gray-light {
+      background-color: @gray-lighter;
+      color: black;
+    }
+
+    .modal-header-content {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .modal-title {
+      font-size: 22px;
+      font-weight: @normal;
+      line-height: 25px;
+      margin-bottom: 15px;
+    }
+
+    .close {
+      margin: -15px -20px 0;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .modal-body {
+    height: 150px;
+    padding: 20px 40px;
+    font-size: 14px;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    a:not(.btn) {
+      color: #000;
+      font-size: 12px;
+    }
+  }
+
+  .modal-footer {
+    border: none;
+    padding: 20px 40px 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    .btn {
+      width: 25%;
+      font-size: 16px;
+    }
+
+    .step-counter {
+      margin-right: 10px;
+      color: @gray;
+    }
+  }
+}
+
+body.modal-open {
+
+  .main {
+    position: absolute;
+    min-height: 100%;
+  }
+
+  .sidebar {
+    @media (min-width: 768px) {
+      position: absolute;
+      margin-top: 0;
+    }
+  }
+}
