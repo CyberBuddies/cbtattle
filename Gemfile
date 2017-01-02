@@ -1,6 +1,6 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
-ruby '2.2.6'
+ruby '2.2.4'
 
 gem 'rails', '4.2.0'
 # Use mysql/postgres as the database for Active Record
@@ -94,8 +94,6 @@ gem 'rpush', '~>2.4.0'
 gem 'virtus'
 
 gem 'has_scope'
-
-gem 'rails-html-sanitizer', '~>1.0.2'
 
 # QRCode extension for Barby
 gem 'rqrcode'
